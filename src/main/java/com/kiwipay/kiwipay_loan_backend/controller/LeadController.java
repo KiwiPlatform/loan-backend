@@ -1,6 +1,7 @@
 package com.kiwipay.kiwipay_loan_backend.controller;
 
 import com.kiwipay.kiwipay_loan_backend.dto.request.CreateLeadRequest;
+import com.kiwipay.kiwipay_loan_backend.dto.request.UpdateLeadRequest;
 import com.kiwipay.kiwipay_loan_backend.dto.response.LeadDetailResponse;
 import com.kiwipay.kiwipay_loan_backend.dto.response.LeadResponse;
 import com.kiwipay.kiwipay_loan_backend.entity.LeadStatus;
@@ -12,6 +13,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
+import com.kiwipay.kiwipay_loan_backend.config.SwaggerSecurityAnnotations.RequireAuthAny;
+import com.kiwipay.kiwipay_loan_backend.config.SwaggerSecurityAnnotations.RequireAdminAuth;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +29,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * REST controller for Lead management.
@@ -33,7 +39,29 @@ import java.time.LocalDateTime;
 @RequestMapping("/api/v1/leads")
 @RequiredArgsConstructor
 @Slf4j
-@Tag(name = "Leads", description = "Gestión de leads de préstamos médicos")
+@Tag(name = "Leads", description = """
+    ## Gestión de Leads de Préstamos Médicos
+    
+    ### Seguridad:
+    - Autenticación requerida en todos los endpoints
+    - Datos sensibles encriptados (DNI, teléfonos)
+    - Validación exhaustiva de entrada
+    - Rate limiting aplicado
+    - Logs de auditoría completos
+    
+    ### Funcionalidades:
+    - Crear leads desde formularios web
+    - Consultar leads con filtros avanzados
+    - Actualizar información completa
+    - Gestión de estados del proceso
+    - Exportación de datos para análisis
+    
+    ### Importante:
+    - Todos los endpoints requieren autenticación
+    - Los datos personales están protegidos según GDPR
+    - Se aplica rate limiting por usuario/IP
+    """)
+@RequireAuthAny
 public class LeadController {
 
     private final LeadService leadService;
@@ -114,5 +142,89 @@ public class LeadController {
         log.info("Updating lead {} status to: {}", id, status);
         LeadDetailResponse response = leadService.updateLeadStatus(id, status);
         return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Update complete lead", description = "Updates all information of a specific lead")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lead updated successfully",
+                content = @Content(schema = @Schema(implementation = LeadDetailResponse.class))),
+        @ApiResponse(responseCode = "400", description = "Invalid input data"),
+        @ApiResponse(responseCode = "404", description = "Lead not found"),
+        @ApiResponse(responseCode = "409", description = "DNI already exists for another lead")
+    })
+    public ResponseEntity<LeadDetailResponse> updateLead(
+            @Parameter(description = "Lead ID", required = true)
+            @PathVariable Long id,
+            
+            @Valid @RequestBody UpdateLeadRequest request) {
+        log.info("Updating complete lead with ID: {}", id);
+        LeadDetailResponse response = leadService.updateLead(id, request);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/all")
+    @Operation(
+        summary = "Get all leads", 
+        description = """
+            ### ENDPOINT ADMINISTRATIVO
+            
+            Retorna TODOS los leads sin paginación.
+            
+            **Advertencias:**
+            - Solo para administradores
+            - Puede retornar grandes volúmenes de datos
+            - Usar con precaución en producción
+            - Considerar usar endpoint paginado para datasets grandes
+            
+            **Seguridad:**
+            - Requiere autenticación de administrador
+            - Datos sensibles están encriptados
+            - Acceso registrado en logs de auditoría
+            
+            **Alternativas recomendadas:**
+            - GET /api/v1/leads (paginado)
+            - GET /api/v1/leads/all/filtered (con filtros)
+            """,
+        security = @SecurityRequirement(name = "Bearer Authentication")
+    )
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lista completa de leads obtenida exitosamente",
+                content = @Content(schema = @Schema(implementation = List.class))),
+        @ApiResponse(responseCode = "401", description = "No autenticado - Token requerido"),
+        @ApiResponse(responseCode = "403", description = "No autorizado - Permisos de administrador requeridos"),
+        @ApiResponse(responseCode = "429", description = "Rate limit excedido - Demasiadas solicitudes")
+    })
+    @RequireAdminAuth
+    public ResponseEntity<List<LeadResponse>> getAllLeads() {
+        log.info("Fetching all leads without pagination");
+        List<LeadResponse> leads = leadService.getAllLeads();
+        return ResponseEntity.ok(leads);
+    }
+
+    @GetMapping("/all/filtered")
+    @Operation(summary = "Get all leads with filters", description = "Returns all leads with optional filters but without pagination")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Successful operation",
+                content = @Content(schema = @Schema(implementation = List.class)))
+    })
+    public ResponseEntity<List<LeadResponse>> getAllLeadsFiltered(
+            @Parameter(description = "Filter by lead status")
+            @RequestParam(required = false) LeadStatus status,
+            
+            @Parameter(description = "Filter by clinic ID")
+            @RequestParam(required = false) Long clinicId,
+            
+            @Parameter(description = "Filter by start date")
+            @RequestParam(required = false) 
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+            
+            @Parameter(description = "Filter by end date")
+            @RequestParam(required = false) 
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate) {
+        
+        log.debug("Fetching all leads with filters - status: {}, clinicId: {}", status, clinicId);
+        List<LeadResponse> leads = leadService.getAllLeadsFiltered(status, clinicId, startDate, endDate);
+        return ResponseEntity.ok(leads);
     }
 } 

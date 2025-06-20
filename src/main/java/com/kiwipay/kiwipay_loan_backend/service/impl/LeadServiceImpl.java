@@ -1,6 +1,7 @@
 package com.kiwipay.kiwipay_loan_backend.service.impl;
 
 import com.kiwipay.kiwipay_loan_backend.dto.request.CreateLeadRequest;
+import com.kiwipay.kiwipay_loan_backend.dto.request.UpdateLeadRequest;
 import com.kiwipay.kiwipay_loan_backend.dto.response.LeadDetailResponse;
 import com.kiwipay.kiwipay_loan_backend.dto.response.LeadResponse;
 import com.kiwipay.kiwipay_loan_backend.entity.Clinic;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Implementation of LeadService.
@@ -123,6 +125,105 @@ public class LeadServiceImpl implements LeadService {
         log.info("Lead {} status updated to: {}", id, status);
 
         return mapToDetailResponse(updatedLead);
+    }
+
+    @Override
+    @Transactional
+    public LeadDetailResponse updateLead(Long id, UpdateLeadRequest request) {
+        log.debug("Updating lead with ID: {}", id);
+
+        Lead lead = leadRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Lead no encontrado con ID: " + id));
+
+        // Update fields only if they are provided in the request
+        if (request.getReceptionistName() != null) {
+            lead.setReceptionistName(request.getReceptionistName());
+        }
+        if (request.getClientName() != null) {
+            lead.setClientName(request.getClientName());
+        }
+        if (request.getDni() != null) {
+            // Check if DNI is already used by another lead
+            if (leadRepository.existsByDniAndIdNot(request.getDni(), id)) {
+                throw new BusinessException("Ya existe otro lead con el DNI: " + request.getDni());
+            }
+            lead.setDni(request.getDni());
+        }
+        if (request.getMonthlyIncome() != null) {
+            lead.setMonthlyIncome(request.getMonthlyIncome());
+        }
+        if (request.getTreatmentCost() != null) {
+            lead.setTreatmentCost(request.getTreatmentCost());
+        }
+        if (request.getPhone() != null) {
+            lead.setPhone(request.getPhone());
+        }
+        if (request.getEmail() != null) {
+            lead.setEmail(request.getEmail());
+        }
+        if (request.getOrigin() != null) {
+            lead.setOrigin(request.getOrigin());
+        }
+
+        // Update clinic if provided
+        if (request.getClinicId() != null) {
+            Clinic clinic = clinicRepository.findById(request.getClinicId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Clínica no encontrada con ID: " + request.getClinicId()));
+            if (!clinic.getActive()) {
+                throw new BusinessException("La clínica seleccionada no está activa");
+            }
+            lead.setClinic(clinic);
+        }
+
+        // Update medical specialty if provided
+        if (request.getMedicalSpecialtyId() != null) {
+            MedicalSpecialty medicalSpecialty = medicalSpecialtyRepository.findById(request.getMedicalSpecialtyId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Especialidad médica no encontrada con ID: " + request.getMedicalSpecialtyId()));
+            if (!medicalSpecialty.getActive()) {
+                throw new BusinessException("La especialidad médica seleccionada no está activa");
+            }
+            lead.setMedicalSpecialty(medicalSpecialty);
+        }
+
+        // Update status if provided
+        if (request.getStatus() != null) {
+            try {
+                LeadStatus newStatus = LeadStatus.valueOf(request.getStatus().toUpperCase());
+                validateStatusTransition(lead.getStatus(), newStatus);
+                lead.setStatus(newStatus);
+            } catch (IllegalArgumentException e) {
+                throw new BusinessException("Estado inválido: " + request.getStatus());
+            }
+        }
+
+        Lead updatedLead = leadRepository.save(lead);
+        log.info("Lead {} updated successfully", id);
+
+        return mapToDetailResponse(updatedLead);
+    }
+
+    @Override
+    public List<LeadResponse> getAllLeads() {
+        log.debug("Fetching all leads without pagination");
+        
+        List<Lead> leads = leadRepository.findAllOrderByCreatedAtDesc();
+        return leads.stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    @Override
+    public List<LeadResponse> getAllLeadsFiltered(LeadStatus status, 
+                                                 Long clinicId, 
+                                                 LocalDateTime startDate, 
+                                                 LocalDateTime endDate) {
+        log.debug("Fetching all leads with filters - status: {}, clinicId: {}, startDate: {}, endDate: {}", 
+                  status, clinicId, startDate, endDate);
+
+        List<Lead> leads = leadRepository.findAllWithFiltersNoPagination(status, clinicId, startDate, endDate);
+        return leads.stream()
+                .map(this::mapToResponse)
+                .toList();
     }
 
     /**
