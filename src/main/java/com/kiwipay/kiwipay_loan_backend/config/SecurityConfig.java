@@ -2,6 +2,7 @@ package com.kiwipay.kiwipay_loan_backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,6 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
+    @Order(10) // Execute after Swagger security configurations (which have @Order 1, 2, 3)
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             // CSRF disabled for REST API
@@ -42,8 +44,6 @@ public class SecurityConfig {
             // Authorization - All endpoints are public for now
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/v1/**").permitAll()
-                .requestMatchers("/swagger-ui/**").permitAll()
-                .requestMatchers("/api-docs/**").permitAll()
                 .requestMatchers("/actuator/health").permitAll()
                 .anyRequest().permitAll()
             );

@@ -182,4 +182,162 @@ SERVER_PORT=8080
 ## 📚 Referencias
 
 - [Spring Boot Profiles Guide](https://medium.com/@patryk.sosinski/mastering-spring-boot-profiles-in-application-properties-c4e9ea46e994)
-- [Spring Boot Official Documentation](https://docs.spring.io/spring-boot/reference/features/profiles.html) 
+- [Spring Boot Official Documentation](https://docs.spring.io/spring-boot/reference/features/profiles.html)
+
+## Resumen de Perfiles
+
+### 🛠️ Desarrollo (dev)
+- **Swagger**: ✅ Habilitado (requiere clave secreta)
+- **Base de datos**: `kiwipay_loan_dev`
+- **Logging**: DEBUG
+- **Uso**: Desarrollo local con todas las herramientas
+
+### 🧪 Staging
+- **Swagger**: ✅ Habilitado (requiere clave secreta)
+- **Base de datos**: `kiwipay_loan_staging`
+- **Logging**: DEBUG
+- **Uso**: Pruebas de integración y pre-producción
+
+### 🚀 Producción (prod)
+- **Swagger**: ❌ DESHABILITADO (por seguridad)
+- **Base de datos**: `kiwipay_loan_prod`
+- **Logging**: ERROR/WARN únicamente
+- **Uso**: Entorno productivo con máxima seguridad y rendimiento
+
+## Cómo Ejecutar en Cada Perfil
+
+### Opción 1: Modificar application.properties
+```properties
+spring.profiles.active=dev    # o staging o prod
+```
+
+### Opción 2: Variable de entorno
+```bash
+export SPRING_PROFILES_ACTIVE=prod
+java -jar kiwipay-loan-backend.jar
+```
+
+### Opción 3: Argumento de línea de comandos
+```bash
+java -jar kiwipay-loan-backend.jar --spring.profiles.active=prod
+```
+
+### Opción 4: En IntelliJ IDEA
+1. Edit Configurations
+2. En "Active profiles" escribir: `prod`
+3. Run
+
+## Probar con Postman en Producción
+
+Como Swagger está deshabilitado en producción, usa Postman:
+
+### 1. Endpoints disponibles:
+```
+GET    /api/v1/leads
+GET    /api/v1/leads/{id}
+POST   /api/v1/leads
+PUT    /api/v1/leads/{id}
+DELETE /api/v1/leads/{id}
+
+GET    /api/v1/clinics
+GET    /api/v1/specialties
+```
+
+### 2. Headers requeridos:
+```
+Content-Type: application/json
+Accept: application/json
+```
+
+### 3. Ejemplo de request en Postman:
+
+**Crear Lead:**
+```
+POST http://localhost:8080/api/v1/leads
+Content-Type: application/json
+
+{
+  "clinicId": 1,
+  "medicalSpecialtyId": 1,
+  "clientName": "Juan Pérez",
+  "clientDni": "12345678",
+  "clientPhone": "999888777",
+  "clientEmail": "juan@example.com",
+  "estimatedAmount": 5000.00,
+  "estimatedInstallments": 12,
+  "observations": "Cliente interesado en cirugía"
+}
+```
+
+## Diferencias Clave entre Perfiles
+
+| Característica | Desarrollo | Staging | Producción |
+|---------------|------------|---------|------------|
+| **Swagger UI** | ✅ Con autenticación | ✅ Con autenticación | ❌ Deshabilitado |
+| **API Docs** | ✅ Habilitado | ✅ Habilitado | ❌ Deshabilitado |
+| **Actuator** | Todos los endpoints | Todos los endpoints | Solo health e info |
+| **CORS** | Permisivo (localhost) | Permisivo (localhost) | Restrictivo |
+| **Logging SQL** | ✅ Habilitado | ✅ Habilitado | ❌ Deshabilitado |
+| **Error Details** | ✅ Completos | ✅ Completos | ❌ Ocultos |
+| **Rate Limiting** | 100 req/min | 100 req/min | 60 req/min |
+| **Cache** | ❌ Deshabilitado | ❌ Deshabilitado | ✅ Habilitado |
+| **Compresión** | ✅ Habilitada | ✅ Habilitada | ✅ Optimizada |
+
+## Configuración de Base de Datos
+
+Todas las bases de datos usan las mismas credenciales por defecto:
+```
+Host: localhost
+Port: 5432
+Username: postgres
+Password: root
+```
+
+Las bases de datos son:
+- **Desarrollo**: `kiwipay_loan_dev`
+- **Staging**: `kiwipay_loan_staging`
+- **Producción**: `kiwipay_loan_prod`
+
+## Seguridad en Producción
+
+En producción se implementan las siguientes medidas:
+
+1. **Swagger completamente deshabilitado**
+2. **Logs mínimos** (solo ERROR y WARN)
+3. **Sin detalles de errores** en respuestas
+4. **Headers de seguridad** estrictos
+5. **CORS restrictivo** (solo dominios autorizados)
+6. **Rate limiting** más estricto
+7. **Cache habilitado** para mejor rendimiento
+8. **Compresión optimizada** de respuestas
+
+## Recomendaciones
+
+- **Desarrollo**: Usa este perfil para desarrollo local
+- **Staging**: Usa para pruebas de integración
+- **Producción**: 
+  - Solo para el servidor de producción
+  - Usa Postman o tu cliente HTTP preferido
+  - Configura las variables de entorno apropiadas
+  - Nunca expongas Swagger en producción
+
+## Variables de Entorno Importantes
+
+Para producción, configura estas variables:
+
+```bash
+# Base de datos (si no es localhost)
+DATABASE_URL=jdbc:postgresql://prod-server:5432/kiwipay_loan_prod
+DB_USERNAME=prod_user
+DB_PASSWORD=secure_password
+
+# JWT Secret (CAMBIAR EN PRODUCCIÓN)
+JWT_SECRET=your-secure-jwt-secret-at-least-256-bits
+
+# CORS (dominios permitidos)
+CORS_ALLOWED_ORIGINS=https://app.kiwipay.pe,https://admin.kiwipay.pe
+
+# Encriptación
+KIWIPAY_ENCRYPTION_PASSWORD=your-encryption-password
+KIWIPAY_ENCRYPTION_SALT=your-encryption-salt
+``` 

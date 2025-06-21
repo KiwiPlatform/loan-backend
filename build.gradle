@@ -32,6 +32,7 @@ dependencies {
 	
 	// Database
 	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'com.h2database:h2' // Base de datos en memoria para desarrollo rápido
 	implementation 'org.flywaydb:flyway-core'
 	
 	// Excel Processing (Apache POI)
@@ -60,6 +61,10 @@ dependencies {
 	// Rate Limiting
 	implementation 'com.github.vladimir-bukhtoyarov:bucket4j-core:7.6.0'
 	implementation 'com.github.vladimir-bukhtoyarov:bucket4j-caffeine:7.6.0'
+	
+	// Hibernate Cache
+	implementation 'org.hibernate.orm:hibernate-jcache:6.3.1.Final'
+	implementation 'com.github.ben-manes.caffeine:jcache:3.1.8'
 	
 	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

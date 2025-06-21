@@ -41,7 +41,7 @@ public class ExcelPopulateService {
      */
     @Transactional
     public void populateFromExcel() {
-        log.info("🚀 Iniciando proceso de populate desde Excel: {}", EXCEL_FILE_PATH);
+        log.info("Iniciando proceso de populate desde Excel: {}", EXCEL_FILE_PATH);
         
         try {
             // 1. Leer archivo Excel
@@ -59,7 +59,7 @@ public class ExcelPopulateService {
             workbook.close();
             
         } catch (Exception e) {
-            log.error("❌ Error durante el proceso de populate: {}", e.getMessage(), e);
+            log.error("Error durante el proceso de populate: {}", e.getMessage(), e);
             throw new RuntimeException("Error poblando la base de datos desde Excel", e);
         }
     }
@@ -77,7 +77,7 @@ public class ExcelPopulateService {
         
         try (InputStream inputStream = resource.getInputStream()) {
             Workbook workbook = new XSSFWorkbook(inputStream);
-            log.info("✅ Excel cargado exitosamente. Hojas encontradas: {}", workbook.getNumberOfSheets());
+            log.info("Excel cargado exitosamente. Hojas encontradas: {}", workbook.getNumberOfSheets());
             
             // Mostrar nombres de las hojas
             for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
@@ -129,14 +129,14 @@ public class ExcelPopulateService {
                 Clinic savedClinic = clinicRepository.save(clinic);
                 insertedCount++;
                 
-                log.info("✅ Clínica insertada: {} (ID: {})", savedClinic.getName(), savedClinic.getId());
+                log.info("Clínica insertada: {} (ID: {})", savedClinic.getName(), savedClinic.getId());
                 
             } catch (Exception e) {
-                log.warn("⚠️ Error procesando fila {} de centros de salud: {}", rowIndex + 1, e.getMessage());
+                log.warn("Error procesando fila {} de centros de salud: {}", rowIndex + 1, e.getMessage());
             }
         }
         
-        log.info("✅ Procesados {} centros de salud", insertedCount);
+        log.info("Procesados {} centros de salud", insertedCount);
         return insertedCount;
     }
     
@@ -182,15 +182,15 @@ public class ExcelPopulateService {
                 MedicalSpecialty savedSpecialty = medicalSpecialtyRepository.save(medicalSpecialty);
                 insertedCount++;
                 
-                log.info("✅ Especialidad insertada: {} - {} (ID: {})", 
+                log.info("Especialidad insertada: {} - {} (ID: {})", 
                         savedSpecialty.getCategory(), savedSpecialty.getName(), savedSpecialty.getId());
                 
             } catch (Exception e) {
-                log.warn("⚠️ Error procesando fila {} de especialidades: {}", rowIndex + 1, e.getMessage());
+                log.warn("Error procesando fila {} de especialidades: {}", rowIndex + 1, e.getMessage());
             }
         }
         
-        log.info("✅ Procesadas {} especialidades", insertedCount);
+        log.info("Procesadas {} especialidades", insertedCount);
         return insertedCount;
     }
     
@@ -198,9 +198,9 @@ public class ExcelPopulateService {
      * Muestra un resumen del proceso
      */
     private void showSummary(int insertedClinics, int insertedSpecialties) {
-        log.info("\n📊 RESUMEN DEL PROCESO DE POPULATE:");
-        log.info("✅ Clínicas insertadas: {}", insertedClinics);
-        log.info("✅ Especialidades insertadas: {}", insertedSpecialties);
+        log.info("\nRESUMEN DEL PROCESO DE POPULATE:");
+        log.info("Clínicas insertadas: {}", insertedClinics);
+        log.info("Especialidades insertadas: {}", insertedSpecialties);
         
         // Mostrar totales en BD
         long totalClinics = clinicRepository.count();

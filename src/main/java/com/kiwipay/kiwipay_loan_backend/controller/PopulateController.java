@@ -25,7 +25,7 @@ public class PopulateController {
     @PostMapping("/excel")
     public ResponseEntity<Map<String, String>> populateFromExcel() {
         try {
-            log.info("🚀 Iniciando populate desde Excel via REST API");
+            log.info("Iniciando populate desde Excel via REST API");
             
             excelPopulateService.populateFromExcel();
             
@@ -35,7 +35,7 @@ public class PopulateController {
             ));
             
         } catch (Exception e) {
-            log.error("❌ Error durante populate: {}", e.getMessage(), e);
+            log.error("Error durante populate: {}", e.getMessage(), e);
             return ResponseEntity.internalServerError().body(Map.of(
                 "status", "error",
                 "message", "Error poblando la base de datos: " + e.getMessage()
