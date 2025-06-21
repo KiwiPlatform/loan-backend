@@ -2938,3 +2938,649 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2025-06-21 17:44:33 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-21 17:44:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-06-21 17:44:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-21 18:38:55 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Starting KiwipayLoanBackendApplication using Java 17.0.15 with PID 2556 (C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main started by ALEXANDER.CASTILLO in C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend)
+2025-06-21 18:38:55 [restartedMain] DEBUG c.k.k.KiwipayLoanBackendApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-06-21 18:38:55 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - The following 1 profile is active: "dev"
+2025-06-21 18:38:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-21 18:38:55 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-21 18:38:57 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-21 18:38:57 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-21 18:38:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-21 18:38:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-21 18:38:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-06-21 18:38:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-21 18:38:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3201 ms
+2025-06-21 18:38:59 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-21 18:38:59 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@185484b9
+2025-06-21 18:38:59 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-21 18:38:59 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/kiwipay_loan_dev'
+2025-06-21 18:38:59 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-21 18:38:59 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kiwipay_loan_dev (PostgreSQL 16.9)
+2025-06-21 18:38:59 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.026s)
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-06-21 18:38:59 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-06-21 18:38:59 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-21 18:38:59 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-06-21 18:38:59 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+2025-06-21 18:39:00 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-21 18:39:00 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-21 18:39:00 [restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@400f80f1) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@49d7b15c)
+2025-06-21 18:39:01 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-21 18:39:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:39:01 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clinicController' defined in file [C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main\com\kiwipay\kiwipay_loan_backend\leads\controller\ClinicController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-06-21 18:39:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:39:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-21 18:39:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-21 18:39:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-06-21 18:39:01 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-21 18:39:01 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.kiwipay.kiwipay_loan_backend.leads.controller.ClinicController required a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' in your configuration.
+
+2025-06-21 18:40:58 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Starting KiwipayLoanBackendApplication using Java 17.0.15 with PID 35160 (C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main started by ALEXANDER.CASTILLO in C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend)
+2025-06-21 18:40:58 [restartedMain] DEBUG c.k.k.KiwipayLoanBackendApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-06-21 18:40:58 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - The following 1 profile is active: "dev"
+2025-06-21 18:40:58 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-21 18:40:58 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-21 18:40:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-21 18:40:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-06-21 18:40:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-21 18:40:59 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-21 18:40:59 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-06-21 18:40:59 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-21 18:40:59 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1600 ms
+2025-06-21 18:40:59 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-21 18:41:00 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2aeec8d7
+2025-06-21 18:41:00 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-21 18:41:00 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/kiwipay_loan_dev'
+2025-06-21 18:41:00 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-21 18:41:00 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kiwipay_loan_dev (PostgreSQL 16.9)
+2025-06-21 18:41:00 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.021s)
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-06-21 18:41:00 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-06-21 18:41:00 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-21 18:41:00 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-06-21 18:41:00 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+2025-06-21 18:41:00 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-21 18:41:00 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-21 18:41:00 [restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@56fe517e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1265a13f)
+2025-06-21 18:41:01 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-21 18:41:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:41:01 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clinicController' defined in file [C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main\com\kiwipay\kiwipay_loan_backend\leads\controller\ClinicController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-06-21 18:41:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:41:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-21 18:41:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-21 18:41:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-06-21 18:41:01 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-21 18:41:01 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.kiwipay.kiwipay_loan_backend.leads.controller.ClinicController required a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' in your configuration.
+
+2025-06-21 18:42:16 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Starting KiwipayLoanBackendApplication using Java 17.0.15 with PID 28692 (C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main started by ALEXANDER.CASTILLO in C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend)
+2025-06-21 18:42:16 [restartedMain] DEBUG c.k.k.KiwipayLoanBackendApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-06-21 18:42:16 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - The following 1 profile is active: "dev"
+2025-06-21 18:42:16 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-21 18:42:16 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-21 18:42:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-21 18:42:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-06-21 18:42:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-21 18:42:18 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-21 18:42:18 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-06-21 18:42:18 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-21 18:42:18 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2260 ms
+2025-06-21 18:42:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-21 18:42:18 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2aeec8d7
+2025-06-21 18:42:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-21 18:42:18 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/kiwipay_loan_dev'
+2025-06-21 18:42:18 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-21 18:42:19 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kiwipay_loan_dev (PostgreSQL 16.9)
+2025-06-21 18:42:19 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.031s)
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-06-21 18:42:19 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-06-21 18:42:19 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-21 18:42:19 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-06-21 18:42:19 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+2025-06-21 18:42:19 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-21 18:42:19 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-21 18:42:19 [restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@56fe517e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1265a13f)
+2025-06-21 18:42:20 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-21 18:42:21 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:42:21 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clinicController' defined in file [C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main\com\kiwipay\kiwipay_loan_backend\leads\controller\ClinicController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-06-21 18:42:21 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:42:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-21 18:42:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-21 18:42:21 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-06-21 18:42:21 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-21 18:42:21 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.kiwipay.kiwipay_loan_backend.leads.controller.ClinicController required a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' in your configuration.
+
+2025-06-21 18:42:37 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Starting KiwipayLoanBackendApplication using Java 17.0.15 with PID 22012 (C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main started by ALEXANDER.CASTILLO in C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend)
+2025-06-21 18:42:37 [restartedMain] DEBUG c.k.k.KiwipayLoanBackendApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-06-21 18:42:37 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - The following 1 profile is active: "dev"
+2025-06-21 18:42:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-21 18:42:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-21 18:42:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-21 18:42:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-06-21 18:42:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-21 18:42:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-21 18:42:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-06-21 18:42:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-21 18:42:40 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2524 ms
+2025-06-21 18:42:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-21 18:42:40 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f06f353
+2025-06-21 18:42:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-21 18:42:40 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/kiwipay_loan_dev'
+2025-06-21 18:42:40 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-06-21 18:42:40 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-21 18:42:40 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-21 18:42:40 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-21 18:42:40 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kiwipay_loan_dev (PostgreSQL 16.9)
+2025-06-21 18:42:40 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-06-21 18:42:40 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.026s)
+2025-06-21 18:42:40 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-06-21 18:42:41 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-06-21 18:42:41 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-21 18:42:41 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-06-21 18:42:41 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+2025-06-21 18:42:41 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-21 18:42:41 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-21 18:42:41 [restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@57f79452) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@499a5f61)
+2025-06-21 18:42:42 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-21 18:42:42 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:42:42 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clinicController' defined in file [C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main\com\kiwipay\kiwipay_loan_backend\leads\controller\ClinicController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-06-21 18:42:42 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:42:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-21 18:42:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-21 18:42:42 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-06-21 18:42:42 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-21 18:42:42 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.kiwipay.kiwipay_loan_backend.leads.controller.ClinicController required a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.kiwipay.kiwipay_loan_backend.leads.repository.ClinicRepository' in your configuration.
+
+2025-06-21 18:46:26 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Starting KiwipayLoanBackendApplication using Java 17.0.15 with PID 13440 (C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend\build\classes\java\main started by ALEXANDER.CASTILLO in C:\Users\ALEXANDER.CASTILLO\OneDrive - ALESE SAC\Escritorio\KIWIPAY\ERP-Base\kiwipay-loan-backend)
+2025-06-21 18:46:26 [restartedMain] DEBUG c.k.k.KiwipayLoanBackendApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-06-21 18:46:26 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - The following 1 profile is active: "dev"
+2025-06-21 18:46:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-21 18:46:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-21 18:46:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-21 18:46:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2025-06-21 18:46:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-21 18:46:28 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-21 18:46:28 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-06-21 18:46:28 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-21 18:46:28 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1719 ms
+2025-06-21 18:46:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-21 18:46:28 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2bf3e44
+2025-06-21 18:46:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-21 18:46:28 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/kiwipay_loan_dev'
+2025-06-21 18:46:29 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-21 18:46:29 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kiwipay_loan_dev (PostgreSQL 16.9)
+2025-06-21 18:46:29 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.9 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.021s)
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-06-21 18:46:29 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-06-21 18:46:29 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-21 18:46:29 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-06-21 18:46:29 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+2025-06-21 18:46:29 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-21 18:46:29 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-21 18:46:29 [restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@b44124f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@58264e28)
+2025-06-21 18:46:30 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-21 18:46:30 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:46:31 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-21 18:46:31 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-06-21 18:46:32 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+2025-06-21 18:46:32 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-06-21 18:46:32 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-06-21 18:46:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c795727, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4eead86b, org.springframework.security.web.context.SecurityContextHolderFilter@68e6b6d5, org.springframework.security.web.header.HeaderWriterFilter@39ffe828, org.springframework.web.filter.CorsFilter@1a98ebc0, org.springframework.security.web.authentication.logout.LogoutFilter@158ef6a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ee0155a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fdafc6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64636835, org.springframework.security.web.session.SessionManagementFilter@498b743d, org.springframework.security.web.access.ExceptionTranslationFilter@34a8c41d, org.springframework.security.web.access.intercept.AuthorizationFilter@70b4760]
+2025-06-21 18:46:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Mvc [pattern='/swagger-ui/**'], Mvc [pattern='/v3/api-docs/**'], Mvc [pattern='/swagger-resources/**'], Mvc [pattern='/webjars/**']] with [org.springframework.security.web.session.DisableEncodeUrlFilter@7515cc88, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@767cafb2, org.springframework.security.web.context.SecurityContextHolderFilter@2a7040bd, org.springframework.security.web.header.HeaderWriterFilter@42674e5c, org.springframework.security.web.authentication.logout.LogoutFilter@1492ef0f, com.kiwipay.kiwipay_loan_backend.leads.config.SwaggerSecurityAnnotations$SwaggerAuthFilter@27c0d703, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fe17e36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44a296f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f7e41df, org.springframework.security.web.access.ExceptionTranslationFilter@17859fa0, org.springframework.security.web.access.intercept.AuthorizationFilter@30b314b0]
+2025-06-21 18:46:32 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-06-21 18:46:32 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-06-21 18:46:33 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-21 18:46:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-06-21 18:46:33 [restartedMain] INFO  c.k.k.KiwipayLoanBackendApplication - Started KiwipayLoanBackendApplication in 7.356 seconds (process running for 8.166)
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3df22b11
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4680c168
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-06-21 18:46:34 [RMI TCP Connection(3)-192.168.2.40] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-06-21 18:46:38 [http-nio-8080-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/swagger-ui/index.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs/swagger-config
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs/swagger-config
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
+2025-06-21 18:46:38 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:38 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs
+2025-06-21 18:46:38 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:38 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs
+2025-06-21 18:46:38 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
+2025-06-21 18:46:38 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-21 18:46:39 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 446 ms
+2025-06-21 18:46:39 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-06-21 18:46:39 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-21 18:46:39 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui.html
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui.html
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui.html", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-06-21 18:46:46 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:46 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs/swagger-config
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs/swagger-config
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
+2025-06-21 18:46:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-21 18:46:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-21 18:47:01 [http-nio-8080-exec-9] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2025-06-21 18:47:01 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:16 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /favicon.ico
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-06-21 18:47:18 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.kiwipay.kiwipay_loan_backend.leads.exception.GlobalExceptionHandler#handleGlobalException(Exception, WebRequest)
+2025-06-21 18:47:18 [http-nio-8080-exec-1] ERROR c.k.k.l.e.GlobalExceptionHandler - Unexpected error occurred
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-21 18:47:19 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/problem+json]
+2025-06-21 18:47:19 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProblemDetail[type='about:blank', title='Internal Server Error', status=500, detail='An unexpected e (truncated)...]
+2025-06-21 18:47:19 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-06-21 18:47:19 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs/swagger-config
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs/swagger-config
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
+2025-06-21 18:47:23 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:23 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-21 18:47:23 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-21 18:47:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-21 18:47:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-21 18:47:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
