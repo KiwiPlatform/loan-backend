@@ -56,12 +56,12 @@ public class OpenApiSecurityConfig {
      */
     private Info apiInfo() {
         return new Info()
-                .title("KiwiPay Loan API")
+                .title("KiwiPay  Platform")
                 .description("""
-                    ## API para Gestión de Préstamos Médicos
+                    ## Platform para Gestión de Préstamos Médicos
                     
                     ### Autenticación:
-                    Esta API utiliza **Bearer Token (JWT)** para la autenticación.
+                    Esta Platform utiliza **Bearer Token (JWT)** para la autenticación.
                     
                     ### Pasos para autenticarte:
                     1. **Registrar usuario** (si no tienes cuenta): POST `/api/v1/auth/register`
