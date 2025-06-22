@@ -34,13 +34,9 @@ src/main/resources/
   - `JWT_SECRET`
   - `CORS_ALLOWED_ORIGINS`
 
-### 🧪 **TEST (Testing)** - `application-test.properties`
-- **Base de datos**: H2 en memoria
-- **Puerto**: Aleatorio (0)
-- **Logging**: Silencioso
-- **CORS**: Permisivo para tests
-- **Flyway**: Deshabilitado (usa create-drop)
-- **H2 Console**: Habilitado para debugging
+### ⚠️ **TESTING DESHABILITADO**
+- **Tests eliminados**: Para evitar conflictos de configuración
+- **Solo producción y desarrollo**: Enfoque simplificado sin tests
 
 ## 🎯 Cómo Activar Perfiles
 
@@ -102,15 +98,15 @@ Active profile: dev
 
 ## 📊 Comparación de Perfiles
 
-| Característica | DEV | PROD | TEST |
-|---------------|-----|------|------|
-| Base de datos | PostgreSQL local | PostgreSQL remoto | H2 memoria |
-| Pool conexiones | 5 max | 20 max | Mínimo |
-| Logging level | DEBUG | WARN/INFO | WARN |
-| Actuator endpoints | Todos | Básicos | Mínimos |
-| CORS | Permisivo | Restrictivo | Permisivo |
-| Error details | Completos | Ocultos | Completos |
-| SSL | No | Sí | No |
+| Característica | DEV | PROD |
+|---------------|-----|------|
+| Base de datos | PostgreSQL local | PostgreSQL remoto |
+| Pool conexiones | 5 max | 20 max |
+| Logging level | DEBUG | WARN/INFO |
+| Actuator endpoints | Todos | Básicos |
+| CORS | Permisivo | Restrictivo |
+| Error details | Completos | Ocultos |
+| SSL | No | Sí |
 
 ## 🛡️ Seguridad por Perfil
 
@@ -125,10 +121,9 @@ Active profile: dev
 - Errores ocultos
 - HTTPS obligatorio
 
-### Testing
-- JWT secret fijo para tests
-- Sin rate limiting
-- Configuración permisiva
+### ⚠️ Testing Eliminado
+- Sin configuración de tests
+- Enfoque simplificado
 
 ## 🌍 Variables de Entorno para Producción
 

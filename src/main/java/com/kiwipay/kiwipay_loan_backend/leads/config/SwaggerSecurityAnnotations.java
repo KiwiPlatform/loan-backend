@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Component;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -55,6 +57,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Configuration
 @EnableWebSecurity
+@Component
 public class SwaggerSecurityAnnotations {
 
     @Value("${SWAGGER_STAGING_SECRET:}")
@@ -463,59 +466,150 @@ public class SwaggerSecurityAnnotations {
         }
     }
 
-    // ==================== ANOTACIONES DE SEGURIDAD ====================
+    // ==================== ANOTACIONES DE SEGURIDAD POR PERFIL ====================
 
     /**
-     * Requiere autenticación JWT Bearer Token
+     * DESARROLLO: Sin autenticación JWT - Solo clave secreta de Swagger
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface DevAuth {
+        // Sin SecurityRequirement - Solo documentación
+    }
+
+    /**
+     * STAGING: JWT Bearer Authentication
      */
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
     @SecurityRequirement(name = "Bearer Authentication")
+    public @interface StagingAuth {
+    }
+
+    /**
+     * PRODUCCIÓN: Solo JWT (sin Swagger UI)
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @SecurityRequirement(name = "Bearer Authentication")
+    public @interface ProdAuth {
+    }
+
+    // ==================== ANOTACIONES LEGACY (DEPRECATED) ====================
+
+    /**
+     * @deprecated Usar @DevAuth, @StagingAuth o @ProdAuth según el entorno
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Deprecated
     public @interface RequireJwtAuth {
     }
 
     /**
-     * Requiere OAuth2 con scopes específicos
+     * @deprecated Usar @StagingAuth para JWT
      */
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
-    @SecurityRequirement(name = "OAuth2 Authorization Code")
+    @Deprecated
     public @interface RequireOAuth2 {
     }
 
     /**
-     * Múltiples opciones de autenticación
+     * @deprecated Usar @DevAuth en development, @StagingAuth en staging
      */
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
-    @SecurityRequirements({
-        @SecurityRequirement(name = "Bearer Authentication"),
-        @SecurityRequirement(name = "OAuth2 Authorization Code")
-    })
+    @Deprecated
     public @interface RequireAuthAny {
     }
 
     /**
-     * Requiere autenticación de administrador
+     * @deprecated Usar @DevAuth en development, @StagingAuth en staging  
      */
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
-    @SecurityRequirements({
-        @SecurityRequirement(name = "Bearer Authentication"),
-        @SecurityRequirement(name = "OAuth2 Authorization Code")
-    })
+    @Deprecated
     public @interface RequireAdminAuth {
     }
 
     /**
-     * Solo para desarrollo - autenticación flexible
+     * @deprecated Usar @DevAuth exclusivamente
      */
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
-    @SecurityRequirements({
-        @SecurityRequirement(name = "Bearer Authentication"),
-        @SecurityRequirement(name = "Basic Authentication")
-    })
+    @Deprecated
     public @interface DevOnlyAuth {
+    }
+
+    // =============================================================================
+    // ANOTACIONES DE SEGURIDAD CONDICIONALES POR PERFIL
+    // =============================================================================
+
+    /**
+     * DESARROLLO: SIN AUTENTICACIÓN
+     * No aplica ninguna validación de seguridad
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface DevSecurity {
+        // Sin seguridad en desarrollo
+    }
+
+    /**
+     * STAGING: AUTENTICACIÓN JWT REQUERIDA
+     * Aplica validación JWT completa
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+    public @interface StagingSecurity {
+        String[] roles() default {"USER", "ADMIN"};
+    }
+
+    /**
+     * PRODUCCIÓN: AUTENTICACIÓN JWT REQUERIDA
+     * Aplica validación JWT completa con máxima seguridad
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+    public @interface ProdSecurity {
+        String[] roles() default {"USER", "ADMIN"};
+    }
+
+    /**
+     * SOLO ADMIN: Para operaciones administrativas
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+    public @interface AdminOnly {
+        // Solo administradores
+    }
+
+    /**
+     * ADMIN SOLO EN STAGING/PROD: En dev es público
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface ConditionalAdminOnly {
+        // Condicional según perfil - administradores en staging/prod, público en dev
+    }
+
+    /**
+     * ANOTACIÓN UNIVERSAL DE SEGURIDAD ADAPTIVA
+     * - DEV: Sin restricciones (público)
+     * - STAGING/PROD: Requiere autenticación JWT + roles especificados
+     */
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @SecurityRequirement(name = "Bearer Authentication")
+    public @interface AdaptiveSecurity {
+        String[] roles() default {"USER", "ADMIN"};
+        boolean adminOnly() default false;
     }
 } 
