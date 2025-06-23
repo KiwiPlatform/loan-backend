@@ -3,12 +3,12 @@
 .gitignore
 .gitattributes
 
-# Gradle
+# Gradle - excluir solo build artifacts, mantener wrapper
 .gradle
 build
-gradle
-gradlew
-gradlew.bat
+# gradle - COMENTADO porque lo necesita el Dockerfile
+# gradlew - COMENTADO porque lo necesita el Dockerfile
+# gradlew.bat - COMENTADO porque lo necesita el Dockerfile
 
 # IDE
 .idea
