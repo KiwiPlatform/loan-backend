@@ -1,0 +1,54 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Gradle
+.gradle
+build
+gradle
+gradlew
+gradlew.bat
+
+# IDE
+.idea
+*.iws
+*.iml
+*.ipr
+.vscode
+.settings
+.project
+.classpath
+
+# Logs
+logs
+*.log
+
+# Documentación
+*.md
+docs
+README.md
+HELP.md
+
+# Archivos de entorno
+.env
+.env.*
+*.env
+render-env-variables.txt
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Tests
+src/test
+
+# Scripts locales
+scripts
+
+# Node (si hay algún frontend)
+node_modules
+package-lock.json
+package.json 

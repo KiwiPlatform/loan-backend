@@ -12989,3 +12989,1255 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2025-06-22 17:37:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
 2025-06-22 17:37:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=9, receptionistName=grabacion tres, clientName=grabaciontres, dni=44444444, ph (truncated)...]
 2025-06-22 17:37:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:42:55 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/auth/login
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/login
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/login
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/login", parameters={}
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.AuthController#authenticate(AuthRequest)
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AuthRequest(username=AdminTEST, password=Ecfcastf1234%)]
+2025-06-22 17:42:55 [http-nio-8080-exec-3] INFO  c.k.k.l.controller.AuthController - Solicitud de login recibida para usuario: AdminTEST
+2025-06-22 17:42:55 [http-nio-8080-exec-3] INFO  c.k.k.leads.service.AuthService - Iniciando autenticación de usuario: AdminTEST
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.updated_by,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.updated_by,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-06-22 17:42:55 [http-nio-8080-exec-3] INFO  c.k.k.leads.service.AuthService - Usuario autenticado exitosamente: AdminTEST
+2025-06-22 17:42:55 [http-nio-8080-exec-3] INFO  c.k.k.l.controller.AuthController - Usuario autenticado y token generado para: AdminTEST
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [AuthResponse(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pblRFU1QiLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlO (truncated)...]
+2025-06-22 17:42:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:42:55 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:42:55 [http-nio-8080-exec-8] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=9, clientName=grabaciontres, dni=44444444, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:42:55 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:42:55 [http-nio-8080-exec-10] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=9, clientName=grabaciontres, dni=44444444, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:42:55 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:43:27 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/9", parameters={}
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:43:27 [http-nio-8080-exec-9] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 9
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 9
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=9, receptionistName=grabacion tres, clientName=grabaciontres, dni=44444444, ph (truncated)...]
+2025-06-22 17:43:27 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/9
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/9", parameters={}
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:43:27 [http-nio-8080-exec-6] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 9
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 9
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=9, receptionistName=grabacion tres, clientName=grabaciontres, dni=44444444, ph (truncated)...]
+2025-06-22 17:43:27 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:23 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:23 [http-nio-8080-exec-8] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=9, clientName=grabaciontres, dni=44444444, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:45:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:23 [http-nio-8080-exec-10] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=9, clientName=grabaciontres, dni=44444444, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:45:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/leads
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/leads
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/leads", parameters={}
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#createLead(CreateLeadRequest)
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [CreateLeadRequest(receptionistName=Alexander, clientName=Edwin Alexis, clinicId=2, medicalSpecialtyI (truncated)...]
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:28 [http-nio-8080-exec-5] INFO  c.k.k.l.controller.LeadController - Creating new lead with DNI: 25715974
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Creating new lead with DNI: 25715974
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id 
+    from
+        leads l1_0 
+    where
+        l1_0.dni=? 
+    fetch
+        first ? rows only
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by 
+    from
+        clinics c1_0 
+    where
+        c1_0.id=?
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by 
+    from
+        medical_specialties ms1_0 
+    where
+        ms1_0.id=?
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        leads
+        (client_name, clinic_id, created_at, created_by, dni, email, medical_specialty_id, monthly_income, origin, phone, receptionist_name, status, treatment_cost, updated_at, updated_by) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-22 17:45:28 [http-nio-8080-exec-5] INFO  c.k.k.l.service.impl.LeadServiceImpl - Lead created successfully with ID: 10
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json]
+2025-06-22 17:45:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:45:29 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/clinics
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/clinics
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/clinics", parameters={}
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.ClinicController#getAllClinics()
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by 
+    from
+        clinics c1_0
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json]
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.kiwipay.kiwipay_loan_backend.leads.entity.Clinic@5d3a8127, com.kiwipay.kiwipay_loan_backend.lea (truncated)...]
+2025-06-22 17:45:29 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/medical-specialties
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/medical-specialties
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/medical-specialties", parameters={}
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.MedicalSpecialtyController#getAllMedicalSpecialties()
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by 
+    from
+        medical_specialties ms1_0
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json]
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.kiwipay.kiwipay_loan_backend.leads.entity.MedicalSpecialty@666ea17e, com.kiwipay.kiwipay_loan_b (truncated)...]
+2025-06-22 17:45:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:38 [http-nio-8080-exec-3] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:45:38 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:38 [http-nio-8080-exec-2] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:45:38 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:48 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:48 [http-nio-8080-exec-10] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:45:48 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:45:48 [http-nio-8080-exec-5] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:45:48 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:05 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:05 [http-nio-8080-exec-3] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:05 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:05 [http-nio-8080-exec-8] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:05 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:24 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:24 [http-nio-8080-exec-5] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:51:24 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:24 [http-nio-8080-exec-7] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:51:24 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:36 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:36 [http-nio-8080-exec-4] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:36 [http-nio-8080-exec-2] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:36 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:37 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:37 [http-nio-8080-exec-1] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:51:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/10
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/10", parameters={}
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getLeadById(Long)
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: false, Roles: USER,ADMIN
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:37 [http-nio-8080-exec-10] INFO  c.k.k.l.controller.LeadController - Fetching lead with ID: 10
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching lead with ID: 10
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    where
+        l1_0.id=?
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LeadDetailResponse(id=10, receptionistName=Alexander, clientName=Edwin Alexis, dni=25715974, phone=9 (truncated)...]
+2025-06-22 17:51:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:47 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:47 [http-nio-8080-exec-9] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:47 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/leads/all
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/v1/leads/all", parameters={}
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kiwipay.kiwipay_loan_backend.leads.controller.LeadController#getAllLeads()
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - AdaptiveSecurity check - Profile: dev, AdminOnly: true, Roles: USER,ADMIN
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG c.k.k.l.c.AdaptiveSecurityAspect - DEV profile detected - Access granted without authentication
+2025-06-22 17:51:47 [http-nio-8080-exec-6] INFO  c.k.k.l.controller.LeadController - Fetching all leads without pagination
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG c.k.k.l.service.impl.LeadServiceImpl - Fetching all leads without pagination
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.client_name,
+        c1_0.id,
+        c1_0.active,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.name,
+        c1_0.updated_at,
+        c1_0.updated_by,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.dni,
+        l1_0.email,
+        ms1_0.id,
+        ms1_0.active,
+        ms1_0.category,
+        ms1_0.created_at,
+        ms1_0.created_by,
+        ms1_0.name,
+        ms1_0.updated_at,
+        ms1_0.updated_by,
+        l1_0.monthly_income,
+        l1_0.origin,
+        l1_0.phone,
+        l1_0.receptionist_name,
+        l1_0.status,
+        l1_0.treatment_cost,
+        l1_0.updated_at,
+        l1_0.updated_by 
+    from
+        leads l1_0 
+    left join
+        clinics c1_0 
+            on c1_0.id=l1_0.clinic_id 
+    left join
+        medical_specialties ms1_0 
+            on ms1_0.id=l1_0.medical_specialty_id 
+    order by
+        l1_0.created_at desc
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[LeadResponse(id=10, clientName=Edwin Alexis, dni=25715974, clinicName=Cirugía Plastíca Martinez, me (truncated)...]
+2025-06-22 17:51:47 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-06-22 17:52:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-22 17:52:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-22 17:52:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
