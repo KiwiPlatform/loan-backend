@@ -35,3 +35,31 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Archivos de entorno y configuración sensible ###
+.env
+.env.*
+*.env
+render-env-variables.txt
+application-local.properties
+application-local.yml
+
+### Logs ###
+logs/
+*.log
+
+### Archivos de seguridad ###
+*.key
+*.pem
+*.cert
+*.crt
+*.p12
+*.jks
+keystore/
+truststore/
+
+### Archivos de respaldo ###
+*.backup
+*.bak
+*.tmp
+*.temp
