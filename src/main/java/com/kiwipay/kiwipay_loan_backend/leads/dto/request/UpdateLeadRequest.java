@@ -51,4 +51,8 @@ public class UpdateLeadRequest {
     // Origin update (opcional)
     @Size(max = 50, message = "El origen no puede exceder 50 caracteres")
     private String origin;
+
+    // Observaciones update (opcional)
+    @Size(max = 5000, message = "Las observaciones no pueden exceder 5000 caracteres")
+    private String observacion;
 } 

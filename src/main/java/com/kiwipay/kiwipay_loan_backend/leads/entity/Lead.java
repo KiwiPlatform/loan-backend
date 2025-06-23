@@ -58,4 +58,7 @@ public class Lead extends BaseEntity {
     @Column(name = "origin", nullable = false, length = 50)
     @Builder.Default
     private String origin = "WEB";
+
+    @Column(name = "observacion", columnDefinition = "TEXT")
+    private String observacion;
 } 

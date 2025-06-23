@@ -37,6 +37,7 @@ public class LeadDetailResponse {
     // Status Information
     private LeadStatus status;
     private String origin;
+    private String observacion;
     
     // Audit Information
     private LocalDateTime createdAt;

@@ -164,6 +164,9 @@ public class LeadServiceImpl implements LeadService {
         if (request.getOrigin() != null) {
             lead.setOrigin(request.getOrigin());
         }
+        if (request.getObservacion() != null) {
+            lead.setObservacion(request.getObservacion());
+        }
 
         // Update clinic if provided
         if (request.getClinicId() != null) {
@@ -272,6 +275,7 @@ public class LeadServiceImpl implements LeadService {
         response.setMedicalSpecialtyName(lead.getMedicalSpecialty().getName());
         response.setStatus(lead.getStatus());
         response.setOrigin(lead.getOrigin());
+        response.setObservacion(lead.getObservacion());
         response.setCreatedAt(lead.getCreatedAt());
         response.setUpdatedAt(lead.getUpdatedAt());
         return response;
