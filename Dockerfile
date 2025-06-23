@@ -6,8 +6,8 @@ WORKDIR /app
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
 
-# Descargar dependencias
-RUN ./gradlew dependencies --no-daemon
+# Dar permisos de ejecución a gradlew y descargar dependencias
+RUN chmod +x ./gradlew && ./gradlew dependencies --no-daemon
 
 # Copiar código fuente
 COPY src ./src
