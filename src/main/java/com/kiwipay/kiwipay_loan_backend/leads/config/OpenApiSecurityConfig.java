@@ -42,8 +42,8 @@ public class OpenApiSecurityConfig {
                         .url("http://localhost:8080" + contextPath)
                         .description("Servidor Local"),
                     new Server()
-                        .url("https://api.kiwipay.pe" + contextPath)
-                        .description("Servidor de Producción")
+                        .url("https://loan-backend-develop.onrender.com" + contextPath)
+                        .description("Servidor de Desarrollo")
                 ))
                 .components(securityComponents())
                 .addSecurityItem(new SecurityRequirement()
