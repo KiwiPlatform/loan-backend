@@ -113,6 +113,8 @@ public class SquarespaceController {
     // ENDPOINTS ADMINISTRATIVOS
     // ========================================
     
+    // TEMPORALMENTE COMENTADO HASTA QUE SE EJECUTE MIGRACIÓN V9
+    /*
     @GetMapping("/leads")
     @Operation(summary = "📊 Obtener leads de Squarespace con filtros", description = """
         ### GESTIÓN ADMINISTRATIVA
@@ -140,7 +142,10 @@ public class SquarespaceController {
         
         return ResponseEntity.ok(leads);
     }
+    */
     
+    // TEMPORALMENTE COMENTADO HASTA QUE SE EJECUTE MIGRACIÓN V9
+    /*
     @GetMapping("/leads/today")
     @Operation(summary = "📅 Leads de hoy", description = "Obtiene todos los leads recibidos hoy")
     public ResponseEntity<List<SquarespaceLeadResponse>> getTodaysLeads() {
@@ -164,6 +169,7 @@ public class SquarespaceController {
         SquarespaceLeadResponse response = squarespaceService.markAsProcessed(id, notes);
         return ResponseEntity.ok(response);
     }
+    */
     
     @GetMapping("/health")
     @Operation(summary = "💚 Health check", description = "Verificar estado del servicio Squarespace")

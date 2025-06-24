@@ -78,6 +78,7 @@ public interface SquarespaceLeadRepository extends JpaRepository<SquarespaceLead
     /**
      * Buscar leads creados hoy.
      */
-    @Query("SELECT s FROM SquarespaceLead s WHERE DATE(s.createdAt) = CURRENT_DATE ORDER BY s.createdAt DESC")
-    List<SquarespaceLead> findTodaysLeads();
+    @Query("SELECT s FROM SquarespaceLead s WHERE s.createdAt >= :startOfDay AND s.createdAt < :endOfDay ORDER BY s.createdAt DESC")
+    List<SquarespaceLead> findTodaysLeads(@Param("startOfDay") LocalDateTime startOfDay, 
+                                         @Param("endOfDay") LocalDateTime endOfDay);
 } 

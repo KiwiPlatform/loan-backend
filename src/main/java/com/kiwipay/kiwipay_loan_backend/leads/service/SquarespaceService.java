@@ -23,6 +23,8 @@ public interface SquarespaceService {
      */
     Long processSquarespaceLead(SquarespaceLeadRequest request);
     
+    // TEMPORALMENTE COMENTADO HASTA QUE SE EJECUTE MIGRACIÓN V9
+    /*
     /**
      * Obtiene leads de Squarespace con filtros.
      * 
@@ -34,7 +36,7 @@ public interface SquarespaceService {
      * @param pageable paginación
      * @return página de leads
      */
-    Page<SquarespaceLeadResponse> getSquarespaceLeads(LeadStatus status,
+    /*Page<SquarespaceLeadResponse> getSquarespaceLeads(LeadStatus status,
                                                      String sede,
                                                      Boolean processed,
                                                      LocalDateTime startDate,
@@ -46,14 +48,14 @@ public interface SquarespaceService {
      * 
      * @return lista de leads del día
      */
-    List<SquarespaceLeadResponse> getTodaysLeads();
+    /*List<SquarespaceLeadResponse> getTodaysLeads();
     
     /**
      * Obtiene estadísticas de leads.
      * 
      * @return mapa con estadísticas
      */
-    Map<String, Object> getLeadStatistics();
+    /*Map<String, Object> getLeadStatistics();
     
     /**
      * Marca un lead como procesado.
@@ -62,5 +64,6 @@ public interface SquarespaceService {
      * @param notes notas adicionales
      * @return lead actualizado
      */
-    SquarespaceLeadResponse markAsProcessed(Long id, String notes);
+    /*SquarespaceLeadResponse markAsProcessed(Long id, String notes);
+    */
 } 

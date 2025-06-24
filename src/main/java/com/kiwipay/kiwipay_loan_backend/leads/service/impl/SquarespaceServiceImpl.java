@@ -58,6 +58,8 @@ public class SquarespaceServiceImpl implements SquarespaceService {
         return savedLead.getId();
     }
 
+    // TEMPORALMENTE COMENTADO HASTA QUE SE EJECUTE MIGRACIÓN V9
+    /*
     @Override
     @Transactional(readOnly = true)
     public Page<SquarespaceLeadResponse> getSquarespaceLeads(LeadStatus status,
@@ -79,7 +81,11 @@ public class SquarespaceServiceImpl implements SquarespaceService {
     public List<SquarespaceLeadResponse> getTodaysLeads() {
         log.debug("Obteniendo leads de hoy");
         
-        List<SquarespaceLead> leads = squarespaceLeadRepository.findTodaysLeads();
+        // Calcular inicio y fin del día actual
+        LocalDateTime startOfDay = LocalDateTime.now().toLocalDate().atStartOfDay();
+        LocalDateTime endOfDay = startOfDay.plusDays(1);
+        
+        List<SquarespaceLead> leads = squarespaceLeadRepository.findTodaysLeads(startOfDay, endOfDay);
         return leads.stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
@@ -101,7 +107,9 @@ public class SquarespaceServiceImpl implements SquarespaceService {
         stats.put("unprocessedLeads", unprocessedLeads);
         
         // Leads de hoy
-        long todaysLeads = squarespaceLeadRepository.findTodaysLeads().size();
+        LocalDateTime startOfDay = LocalDateTime.now().toLocalDate().atStartOfDay();
+        LocalDateTime endOfDay = startOfDay.plusDays(1);
+        long todaysLeads = squarespaceLeadRepository.findTodaysLeads(startOfDay, endOfDay).size();
         stats.put("todaysLeads", todaysLeads);
         
         // Estadísticas por estado
@@ -140,6 +148,7 @@ public class SquarespaceServiceImpl implements SquarespaceService {
         
         return mapToResponse(updatedLead);
     }
+    */
 
     // Método privado para mapear entidad a DTO
     private SquarespaceLeadResponse mapToResponse(SquarespaceLead lead) {
