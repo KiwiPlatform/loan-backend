@@ -2,6 +2,7 @@ package com.kiwipay.kiwipay_loan_backend.leads.controller;
 
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.CreateLeadRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.UpdateLeadRequest;
+import com.kiwipay.kiwipay_loan_backend.leads.dto.request.SquarespaceBackendRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadDetailResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.entity.LeadStatus;
@@ -65,6 +66,58 @@ import java.util.List;
 public class LeadController {
 
     private final LeadService leadService;
+
+    @PostMapping("/squarespace")
+    @AdaptiveSecurity(roles = {"USER", "ADMIN"})
+    @Operation(summary = " CREAR LEAD DESDE API SQUARESPACE", description = """
+        ### ENDPOINT ESPECÍFICO PARA API/MIDDLEWARE SQUARESPACE
+        
+        **CONFIGURACIÓN POR ENTORNO:**
+        - **DEV**: Público (sin autenticación)
+        - **STAGING/PROD**: Requiere autenticación JWT (USER o ADMIN)
+        
+        **Propósito:**
+        Recibe leads desde la API/middleware de Squarespace con datos "en crudo":
+        - **receptionistName**: Texto libre
+        - **sede**: "Lima", "Callao", etc. (se mapea a clinicId)
+        - **clientName**: Texto libre
+        - **dni**: String con 8 dígitos
+                 - **monthlyIncome**: BigDecimal (ej: 3000.00)
+         - **treatmentCost**: BigDecimal (ej: 5000.00)
+        - **phone**: String con 9 dígitos
+        - **source**: "squarespace"
+        
+        El backend se encarga de todas las conversiones necesarias.
+        """)
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "201", description = "Lead de Squarespace creado exitosamente",
+                content = @Content(schema = @Schema(implementation = LeadDetailResponse.class))),
+        @ApiResponse(responseCode = "400", description = "Error procesando datos de Squarespace")
+    })
+    public ResponseEntity<LeadDetailResponse> createSquarespaceLead(
+            @RequestBody SquarespaceBackendRequest request) {
+        
+        log.info("=== RECIBIENDO LEAD DE API SQUARESPACE ===");
+        log.info("🔧 Source: {}", request.getSource());
+        log.info("📋 Recepcionista: {}", request.getReceptionistName());
+        log.info("🏢 Sede: {}", request.getSede());
+        log.info("👤 Cliente: {}", request.getClientName());
+        log.info("🆔 DNI: {}", request.getDni());
+        log.info("💰 Ingreso: {}", request.getMonthlyIncome());
+        log.info("🏥 Costo: {}", request.getTreatmentCost());
+        log.info("📞 Teléfono: {}", request.getPhone());
+        log.info("============================================");
+        
+        try {
+            LeadDetailResponse response = leadService.createLeadFromSquarespace(request);
+            log.info("✅ Lead de Squarespace creado exitosamente con ID: {}", response.getId());
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            
+        } catch (Exception e) {
+            log.error("❌ Error procesando lead de Squarespace: ", e);
+            throw e; // GlobalExceptionHandler se encarga
+        }
+    }
 
     @PostMapping
     @AdaptiveSecurity(roles = {"USER", "ADMIN"})

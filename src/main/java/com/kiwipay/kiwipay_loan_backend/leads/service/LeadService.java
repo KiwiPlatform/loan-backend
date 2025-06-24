@@ -2,6 +2,7 @@ package com.kiwipay.kiwipay_loan_backend.leads.service;
 
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.CreateLeadRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.UpdateLeadRequest;
+import com.kiwipay.kiwipay_loan_backend.leads.dto.request.SquarespaceBackendRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadDetailResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.entity.LeadStatus;
@@ -16,6 +17,15 @@ import java.util.List;
  * Defines the business operations for leads.
  */
 public interface LeadService {
+
+    /**
+     * Create a new lead from Squarespace API with raw data.
+     * Handles all necessary conversions internally.
+     * 
+     * @param request the Squarespace backend request with raw data
+     * @return the created lead details
+     */
+    LeadDetailResponse createLeadFromSquarespace(SquarespaceBackendRequest request);
 
     /**
      * Create a new lead from the form data.

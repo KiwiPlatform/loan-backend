@@ -2,6 +2,7 @@ package com.kiwipay.kiwipay_loan_backend.leads.service.impl;
 
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.CreateLeadRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.request.UpdateLeadRequest;
+import com.kiwipay.kiwipay_loan_backend.leads.dto.request.SquarespaceBackendRequest;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadDetailResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.dto.response.LeadResponse;
 import com.kiwipay.kiwipay_loan_backend.leads.entity.Clinic;
@@ -21,6 +22,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -37,6 +39,104 @@ public class LeadServiceImpl implements LeadService {
     private final LeadRepository leadRepository;
     private final ClinicRepository clinicRepository;
     private final MedicalSpecialtyRepository medicalSpecialtyRepository;
+
+    @Override
+    @Transactional
+    public LeadDetailResponse createLeadFromSquarespace(SquarespaceBackendRequest request) {
+        log.debug("Procesando lead de API Squarespace con DNI: {}", request.getDni());
+
+        // Validaciones básicas
+        if (request.getDni() == null || request.getDni().trim().isEmpty()) {
+            throw new BusinessException("DNI es obligatorio");
+        }
+
+        // Verificar DNI duplicado (opcional - depende de reglas de negocio)
+        if (leadRepository.existsByDni(request.getDni())) {
+            log.warn("DNI {} ya existe, creando lead duplicado desde Squarespace", request.getDni());
+            // Decidir si lanzar excepción o permitir duplicado
+        }
+
+        // Mapear sede a clínica
+        Clinic clinic = mapSedeToClinic(request.getSede());
+        
+        // Obtener especialidad por defecto (primera activa)
+        MedicalSpecialty medicalSpecialty = medicalSpecialtyRepository.findByActiveTrue()
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new BusinessException("No hay especialidades médicas activas"));
+
+        // Los montos ya vienen como BigDecimal de la API
+        BigDecimal monthlyIncome = request.getMonthlyIncome() != null ? request.getMonthlyIncome() : BigDecimal.ZERO;
+        BigDecimal treatmentCost = request.getTreatmentCost() != null ? request.getTreatmentCost() : BigDecimal.ZERO;
+
+        // Crear el lead
+        Lead lead = new Lead();
+        lead.setReceptionistName(request.getReceptionistName());
+        lead.setClientName(request.getClientName());
+        lead.setDni(request.getDni().trim());
+        lead.setMonthlyIncome(monthlyIncome);
+        lead.setTreatmentCost(treatmentCost);
+        lead.setPhone(request.getPhone());
+        lead.setClinic(clinic);
+        lead.setMedicalSpecialty(medicalSpecialty);
+        lead.setStatus(LeadStatus.NUEVO);
+        lead.setOrigin("SQUARESPACE_API");
+
+        // Agregar información adicional en observaciones
+        StringBuilder observaciones = new StringBuilder();
+        observaciones.append("Origen: API Squarespace");
+        if (request.getSede() != null) {
+            observaciones.append(" | Sede original: ").append(request.getSede());
+        }
+        if (request.getSource() != null) {
+            observaciones.append(" | Source: ").append(request.getSource());
+        }
+        lead.setObservacion(observaciones.toString());
+
+        Lead savedLead = leadRepository.save(lead);
+        log.info("Lead de API Squarespace creado exitosamente - ID: {}, DNI: {}", 
+                savedLead.getId(), savedLead.getDni());
+
+        return mapToDetailResponse(savedLead);
+    }
+
+    /**
+     * Mapea la sede (string) a una clínica.
+     */
+    private Clinic mapSedeToClinic(String sede) {
+        if (sede == null || sede.trim().isEmpty()) {
+            // Clínica por defecto
+            return clinicRepository.findByActiveTrue()
+                    .stream()
+                    .findFirst()
+                    .orElseThrow(() -> new BusinessException("No hay clínicas activas"));
+        }
+
+        String sedeNormalized = sede.toLowerCase().trim();
+        
+        // Mapeo por nombre o keywords
+        if (sedeNormalized.contains("lima") || sedeNormalized.contains("principal") || sedeNormalized.equals("1")) {
+            return findClinicByNameOrDefault("Lima");
+        } else if (sedeNormalized.contains("callao") || sedeNormalized.equals("2")) {
+            return findClinicByNameOrDefault("Callao");
+        } else if (sedeNormalized.contains("arequipa") || sedeNormalized.equals("3")) {
+            return findClinicByNameOrDefault("Arequipa");
+        } else {
+            // Buscar por nombre exacto o similar
+            return clinicRepository.findByNameIgnoreCase(sede)
+                    .orElse(findClinicByNameOrDefault("Lima")); // Default a Lima
+        }
+    }
+
+    private Clinic findClinicByNameOrDefault(String name) {
+        return clinicRepository.findByNameIgnoreCase(name)
+                .orElse(clinicRepository.findByActiveTrue()
+                        .stream()
+                        .findFirst()
+                        .orElseThrow(() -> new BusinessException("No hay clínicas activas")));
+    }
+
+
 
     @Override
     @Transactional
